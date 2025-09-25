@@ -194,3 +194,128 @@ for (let i = 0; i<nums.length;i++) { //go through the nums array
 console.log('Exercise 11 result:', odds);
 
 //Exercise 12
+/*
+Exercise 12: FizzBuzz with arrays
+
+1) Choose a method to iterate through the `nums` array. 
+
+2. As you loop, sort the numbers into new arrays based on the following rules:
+
+   - Push any number evenly divisible by 3 to an array called `fizz`.
+   - Push any number evenly divisible by 5 to an array called `buzz`.
+   - Push any number that is evenly divisible by 3 and 5 to an array called
+     `fizzbuzz`.
+
+   Note: A single number may meet more than one of the above rules. If it does,
+         it should be placed in multiple arrays. For example, the number `15`
+         will appear in the `fizz`, `buzz`, and `fizzbuzz` arrays.
+
+Complete Exercise 12 in the space below:
+*/
+
+// console.log(nums);
+
+let fizz = [] //To be an array with numbers divisible by 3
+let buzz = [] //To be an array with numbers divisible by 5
+let fizzbuzz = []  //To be an array with numbers divisible by 3 and 5
+
+for (let i = 0; i < nums.length; i++) {
+    currentNum = nums[i] //var for the current number
+    
+    if(currentNum % 3 === 0) { // if the current number is divisible by 3
+        fizz.push(currentNum) // add div by 3 number to fizz array
+    } 
+    if(currentNum % 5 === 0) { // if the current number is divisible by 5
+        buzz.push(currentNum)  // add div by 5 number to buzz array
+    }
+    if(currentNum % 3 === 0 && currentNum % 5 === 0) { // if the current number is divisible by 3 and 5
+        fizzbuzz.push(currentNum)  // add div by 5 number to buzz array
+    }
+}
+
+// console.log(fizz);
+// console.log(buzz);
+// console.log(fizzbuzz);
+
+console.log('Exercise 12 Results:');
+console.log('  fizz:', fizz);
+console.log('  buzz:', buzz);
+console.log('  fizzbuzz:', fizzbuzz);
+
+//Exercise 13
+/*
+Exercise 13: Retrieve the Last Array
+
+1) Assign the last nested array in the `numArrays` below to a variable named
+   `numList`. As you do this, also fulfill these goals:
+
+   - Assume you don't know how many nested arrays `numArrays` contains.
+   - Do not alter the original `numArrays` array.
+
+Complete Exercise 13 in the space below:
+*/
+
+const numArrays = [
+	[100, 5, 23],
+	[15, 21, 72, 9],
+	[45, 66],
+	[7, 81, 90]
+];
+
+let lastIndex = numArrays.length-1 // get the last index in the L1 array
+
+// console.log(numArrays[lastIndex])
+let numList = numArrays[lastIndex] // Extract the last L2 array
+
+console.log('Exercise 13 result:', numList);
+
+//Exercise 14
+/*
+Exercise 14: Accessing within nested arrays
+
+1) Retrieve the number `66` from the `numArrays` array. As part of this process
+   do not alter the original `numArrays` array.
+
+2) Assign it to a variable called `num`.
+
+Complete Exercise 14 in the space below:
+*/
+
+console.log('Exercise 14 initial:', numArrays);
+
+// console.log(numArrays[2][1]);
+
+let num = numArrays[2][1] // Extract 66 from L1 array 2, L2 array 1
+
+console.log('Exercise 14 result:', num);
+
+//Exercise 15
+/*
+Exercise 15: Nested array sum
+
+1) Use nested loops or `forEach()` methods to sum up all numbers within 
+   `numArrays` nested arrays.
+   
+2) Assign the sum to a variable called `total`.
+
+Hint: Be sure to declare and initialize the total variable before the iterations.
+
+Complete Exercise 15 in the space below:
+*/
+
+console.log(numArrays);
+
+let total = 0 // start total at 0
+
+for(let i = 0; i < numArrays.length; i++) { // Go through L1 array
+    l2Array = numArrays[i] // Create variable with the L2 array
+    // console.log(l2Array);
+    
+    for(let j = 0; j < l2Array.length; j++) { // Go through the L2 array
+        l2ArrayValue = l2Array[j] // Create variable with the L2 array value
+        // console.log(l2ArrayValue);
+        total = total + l2ArrayValue // Add the L2 array value to the current total
+    }
+}
+
+console.log('Exercise 15 result:\n', total);
